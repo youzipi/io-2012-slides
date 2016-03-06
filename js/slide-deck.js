@@ -125,11 +125,11 @@ SlideDeck.prototype.addEventListeners_ = function() {
   //   'msTransition': 'MSTransitionEnd',
   //   'transition': 'transitionend'
   // };
-  // 
+  //
   // // Find the correct transitionEnd vendor prefix.
   // window.transEndEventName = transEndEventNames[
   //     Modernizr.prefixed('transition')];
-  // 
+  //
   // // When slides are done transitioning, kickoff loading iframes.
   // // Note: we're only looking at a single transition (on the slide). This
   // // doesn't include autobuilds the slides may have. Also, if the slide
@@ -313,59 +313,59 @@ SlideDeck.prototype.loadConfig_ = function(config) {
   if (!!!('useBuilds' in settings) || settings.useBuilds) {
     this.makeBuildLists_();
   }
-
-  if (settings.title) {
-    document.title = settings.title.replace(/<br\/?>/, ' ') + ' - Google IO 2012';
-    document.querySelector('[data-config-title]').innerHTML = settings.title;
-  }
-
-  if (settings.subtitle) {
-    document.querySelector('[data-config-subtitle]').innerHTML = settings.subtitle;
-  }
-
-  if (this.config_.presenters) {
-    var presenters = this.config_.presenters;
-    var dataConfigContact = document.querySelector('[data-config-contact]');
-
-    var html = [];
-    if (presenters.length == 1) {
-      var p = presenters[0];
-
-      html = [p.name, p.company].join('<br>');
-
-      var gplus = p.gplus ? '<span>g+</span><a href="' + p.gplus +
-          '">' + p.gplus.replace(/https?:\/\//, '') + '</a>' : '';
-
-      var twitter = p.twitter ? '<span>twitter</span>' +
-          '<a href="http://twitter.com/' + p.twitter + '">' +
-          p.twitter + '</a>' : '';
-
-      var www = p.www ? '<span>www</span><a href="' + p.www +
-                        '">' + p.www.replace(/https?:\/\//, '') + '</a>' : '';
-
-      var github = p.github ? '<span>github</span><a href="' + p.github +
-          '">' + p.github.replace(/https?:\/\//, '') + '</a>' : '';
-
-      var html2 = [gplus, twitter, www, github].join('<br>');
-
-      if (dataConfigContact) {
-        dataConfigContact.innerHTML = html2;
-      }
-    } else {
-      for (var i = 0, p; p = presenters[i]; ++i) {
-        html.push(p.name + ' - ' + p.company);
-      }
-      html = html.join('<br>');
-      if (dataConfigContact) {
-        dataConfigContact.innerHTML = html;
-      }
-    }
-
-    var dataConfigPresenter = document.querySelector('[data-config-presenter]');
-    if (dataConfigPresenter) {
-      document.querySelector('[data-config-presenter]').innerHTML = html;
-    }
-  }
+  //
+  // if (settings.title) {
+  //   document.title = settings.title.replace(/<br\/?>/, ' ') + ' - Google IO 2012';
+  //   document.querySelector('[data-config-title]').innerHTML = settings.title;
+  // }
+  //
+  // if (settings.subtitle) {
+  //   document.querySelector('[data-config-subtitle]').innerHTML = settings.subtitle;
+  // }
+  //
+  // if (this.config_.presenters) {
+  //   var presenters = this.config_.presenters;
+  //   var dataConfigContact = document.querySelector('[data-config-contact]');
+  //
+  //   var html = [];
+  //   if (presenters.length == 1) {
+  //     var p = presenters[0];
+  //
+  //     html = [p.name, p.company].join('<br>');
+  //
+  //     var gplus = p.gplus ? '<span>g+</span><a href="' + p.gplus +
+  //         '">' + p.gplus.replace(/https?:\/\//, '') + '</a>' : '';
+  //
+  //     var twitter = p.twitter ? '<span>twitter</span>' +
+  //         '<a href="http://twitter.com/' + p.twitter + '">' +
+  //         p.twitter + '</a>' : '';
+  //
+  //     var www = p.www ? '<span>www</span><a href="' + p.www +
+  //                       '">' + p.www.replace(/https?:\/\//, '') + '</a>' : '';
+  //
+  //     var github = p.github ? '<span>github</span><a href="' + p.github +
+  //         '">' + p.github.replace(/https?:\/\//, '') + '</a>' : '';
+  //
+  //     var html2 = [gplus, twitter, www, github].join('<br>');
+  //
+  //     if (dataConfigContact) {
+  //       dataConfigContact.innerHTML = html2;
+  //     }
+  //   } else {
+  //     for (var i = 0, p; p = presenters[i]; ++i) {
+  //       html.push(p.name + ' - ' + p.company);
+  //     }
+  //     html = html.join('<br>');
+  //     if (dataConfigContact) {
+  //       dataConfigContact.innerHTML = html;
+  //     }
+  //   }
+  //
+  //   var dataConfigPresenter = document.querySelector('[data-config-presenter]');
+  //   if (dataConfigPresenter) {
+  //     document.querySelector('[data-config-presenter]').innerHTML = html;
+  //   }
+  // }
 
   /* Left/Right tap areas. Default to including. */
   if (!!!('enableSlideAreas' in settings) || settings.enableSlideAreas) {
@@ -556,7 +556,7 @@ SlideDeck.prototype.updateSlides_ = function(opt_dontPush) {
   this.triggerSlideEvent('slideenter', curSlide);
 
 // window.setTimeout(this.disableSlideFrames_.bind(this, curSlide - 2), 301);
-// 
+//
 // this.enableSlideFrames_(curSlide - 1); // Previous slide.
 // this.enableSlideFrames_(curSlide + 1); // Current slide.
 // this.enableSlideFrames_(curSlide + 2); // Next slide.

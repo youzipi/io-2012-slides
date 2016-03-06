@@ -1,7 +1,7 @@
 title: Slide Title
 class: image
 
-![Mobile vs desktop users](image.png)
+![Mobile vs desktop users](images/google_developers_icon_128.png)
 
 ---
 
@@ -19,7 +19,7 @@ Things we'll cover:
 title: Today
 class: nobackground fill
 
-![Many kinds of devices.](image.png)
+![Many kinds of devices.](images/google_developers_icon_128.png)
 
 <footer class="source">source: place source info here</footer>
 
@@ -61,4 +61,3 @@ function detectFormFactor() {
   return device;
 }
 </pre>
-
